@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1,0">
+        <title>Rutas del Mundo | Guia Turística</title>
+        <link rel="stylesheet" href="estilos_proyecto.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <h1>Rutas del Mundo</h1>
+            </div>
+
+            <nav class="navbar">
+                <ul class="menu-principal">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Destinos</a>
+                        <ul class="submenu">
+                            <li><a href="europa.html">Europa</a></li>
+                            <li><a href="asia.html">Asia</a></li>
+                            <li><a href="america.html">América</a></li>
+                            <li><a href="africa.html">Africa</a></li>
+                            <li><a href="oceania.html">Oceanía</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gastronomia.html">Gastronomía</a></li>
+                    <li><a href="consejos.html">Consejos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="bienvenida">
+                <h2>Explora los rincones mas bellos del planeta</h2>
+                <p>Bienvenido a tu guía definitiva para descubrir los lugares mas curiosos de cada continente</p>
+            </section>
+            <br>
+            <br>
+            
+            <section class="seccion-formulario">
+                <h2>Planifica tu Próximo Viaje</h2>
+                <p>Rellena este formulario y nos pondremos en contacto contigo para organizar tu ruta ideal.</p>
+
+        <form action="#" method="post" id="formulario-viajes">
+            <div class="grupo">
+                <label for="nombre">Nombre y Apellidos:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+
+            <div class="grupo">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="grupo">
+                <label for="destino">Destino de interés:</label>
+                <select id="destino" name="destino">
+                    <option value="europa">Europa</option>
+                    <option value="asia">Asia</option>
+                    <option value="america">América</option>
+                    <option value="africa">África</option>
+                    <option value="oceania">Oceanía</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <p>Tipo de alojamiento preferido:</p>
+                    <input type="radio" id="hotel" name="alojamiento" value="hotel" checked>
+                    <label for="hotel">Hotel</label>
+            
+                    <input type="radio" id="hostal" name="alojamiento" value="hostal">
+                    <label for="hostal">Hostal/Albergue</label>
+            
+                    <input type="radio" id="apartamento" name="alojamiento" value="apartamento">
+                    <label for="apartamento">Apartamento</label>
+            </div>
+
+            <div class="grupo">
+                <p>Servicios adicionales:</p>
+                    <input type="checkbox" id="seguro" name="servicios" value="seguro">
+                    <label for="seguro">Seguro de viaje</label>
+
+                    <input type="checkbox" id="guia" name="servicios" value="guia">
+                    <label for="guia">Guía turístico</label>
+
+                    <input type="checkbox" id="vuelos" name="servicios" value="vuelos">
+                    <label for="vuelos">Reserva de vuelos</label>
+            </div>
+
+            <div class="grupo">
+                <label for="mensaje">Cuéntanos más sobre tus planes:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí..."></textarea>
+            </div>
+
+            <div class="botones">
+                <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+                <button type="reset" class="btn-borrar">Borrar Formulario</button>
+            </div>
+    </form>
+</section>
+           
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Rutas del Mundo</p>
+            <p><a href="sitemap.xml">Mapa del sitio</a></p>
+            <br>
+        </footer>
+    </body>
+</html>
