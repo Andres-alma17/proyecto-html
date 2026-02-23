@@ -1,0 +1,495 @@
+/*Estilos Generales*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    
+    color: #333;
+    line-height: 1.6;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;           /*cubro todo el alto de la pantalla */
+    margin: 0;
+    padding: 0;
+}
+/*Header y Logo*/
+header{
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+.logo h1{
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/*Menu Desplegable*/
+.navbar{
+    background-color: #34495e;
+
+}
+
+.menu-principal{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.menu-principal >li{
+    position: relative;
+}
+.menu-principal a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    transition: background 0.3s;
+}
+
+.menu-principal a:hover {
+    background-color: #1abc9c;
+}
+/* Estilos del Submenu  */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #34495e;
+    min-width: 160px;
+    list-style: none;
+    z-index: 1000;
+}
+
+.submenu li a {
+    padding: 12px 20px;
+    border-bottom: 1px solid #2c3e50;
+}
+
+/*Cuando pasamos el raton se muestra el submenu */
+.dropdown:hover .submenu {
+    display: block;
+}
+/* CONTENIDO PRINCIPAL */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    min-height: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.bienvenida{
+    text-align: center;
+    
+}
+.bienvenida h2 {
+    font-size: 2.5rem;     
+    color: #2c3e50;        
+    margin-bottom: 15px;   
+    text-transform: capitalize; /*primera letra en mayuscula */
+}
+
+.bienvenida p {
+    font-size: 1.2rem;     
+    line-height: 1.6;      
+    max-width: 700px;      
+    margin: 0 auto;        
+}
+
+/* FOOTER */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+
+/* PC 1300px */
+@media (max-width: 1300px) {
+    main {
+        max-width: 95%;
+    }
+}
+
+/* movil 600px */
+@media (max-width: 600px) {
+    .menu-principal {
+        flex-direction: column; /* Menu en vertical */
+    }
+    
+    .submenu {
+        position: static; /* El submenu se desplaza hacia abajo */
+        width: 100%;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    .slide img{
+        height: 250px; /*Mas pequeno en el movil que el 450 de pc*/
+    }
+    .tarjeta-destino img {
+        height: 250px;
+    }
+    .tarjeta-destino h3 {
+        font-size: 1.4rem;
+    }
+    .bienvenida h2 { font-size: 1.8rem; }
+    .bienvenida p { font-size: 1.1rem; }
+    .bienvenida { padding: 40px 15px; }
+}
+
+/*Estilos para Imagenes en Slider*/
+.container-slider{
+    width: 100%;
+    max-width: 850px; /* Ajustamos el ancho */
+    margin: auto;
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.slider{
+    display: flex;
+    width: 600%;
+    height: 650px;
+    animation: banner-infinito 15s linear infinite;
+}
+.slide{
+    width: 100%;
+}
+.slide img{
+    width: 100%;
+    height: 100%; /*Le damos una altura fija a todas para que se vena iguales*/
+    object-fit: cover; /*con cover las imagenes se pegan y no se recortan con contain deja un espacio en blanco*/
+    
+}
+/*Animacion para que se mueva*/
+@keyframes banner-infinito{from{margin-left:0px;}to{margin-left:-3200px;}}
+
+
+/* Pausar el banner cuando se pasa el raton encima */
+.container-slider:hover .slider {
+    animation-play-state: paused;
+    
+}
+
+/* ESTILOS DEL FORMULARIO  */
+
+.seccion-formulario {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grupo {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grupo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilo para cajas de texto select y textarea */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Estilo para Radio y Checkbox  */
+input[type="radio"], 
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.botones {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-enviar {
+    background-color: #1abc9c;
+}
+
+.btn-borrar {
+    background-color: #e74c3c;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Estructura de las tarjetas */
+.contenedor-destinos {
+    display: flex;
+    flex-direction: column; /* Apila los elementos uno debajo de otro */
+    gap: 50px; 
+    padding: 40px 0;
+    align-items: center; /* Centra las tarjetas */
+}
+
+.tarjeta-destino {
+    background: #fff;
+    border-radius: 12px;
+    padding: 0; /* Quitamos padding para que la imagen llegue al borde */
+    width: 100%;
+    max-width: 800px; /* Ancho maximo para que no sea gigante en PC */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden; 
+    text-align: center;
+}
+
+.tarjeta-destino img {
+    width: 100%;
+    height: 400px; /* Imagen alta */
+    object-fit: cover;
+    display: block;
+}
+
+/* ANIMACIONES */
+
+/* EUROPA: Efecto de entrada lateral (Slide In) */
+.europa-page .tarjeta-destino {
+    animation: slideEuropa 1.5s ease-out;
+}
+@keyframes slideEuropa {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* ASIA: Efecto de aparicion con aumento (Zoom In) */
+.asia-page .tarjeta-destino {
+    animation: zoomAsia 1.2s ease-in-out;
+}
+@keyframes zoomAsia {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* AMERICA: Efecto de rebote (Bounce) */
+.america-page .tarjeta-destino {
+    animation: bounceAmerica 1s ease-out forwards;
+}
+@keyframes bounceAmerica {
+    0% { transform: translateY(-50px); opacity: 0; }
+    60% { transform: translateY(10px); }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* AFRICA: Efecto de giro suave (Flip) */
+.africa-page .tarjeta-destino {
+    animation: flipAfrica 1.5s;
+    perspective: 1000px; /*Con esta da profundidad al giro*/
+    backface-visibility: hidden; /*Efecto que evita parpadeos en la animacion*/
+}
+@keyframes flipAfrica {
+    from { transform: rotateY(90deg); opacity: 0; }
+    to { transform: rotateY(0deg); opacity: 1; }
+}
+
+/* OCEANIA: Efecto de flotacion suave (Floating) */
+.oceania-page .tarjeta-destino {
+    animation: floatOceania 3s infinite alternate ease-in-out;
+}
+@keyframes floatOceania {
+    from { transform: translateY(0); }
+    to { transform: translateY(-15px); }
+}
+
+.intro-continente {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #1abc9c;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.tarjeta-destino h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin: 25px 0 10px 0;
+}
+
+.tarjeta-destino p {
+    font-size: 1.1rem;
+    color: #555;
+    padding: 0 40px 30px 40px; /* Espacio para el texto */
+    line-height: 1.8;
+    justify-content: center;
+    text-align: justify;
+
+}
+
+/*  ESTILOS GASTRONOMIA */
+
+.contenedor-gastronomia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.item-gastronomia {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.item-gastronomia:hover {
+    transform: translateY(-10px);
+}
+
+.item-gastronomia img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.info-plato {
+    padding: 20px;
+}
+
+.info-plato span {
+    color: #1abc9c;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Animacion para Gastronomia */
+.gastronomia-page .item-gastronomia {
+    animation: fadeInGastronomia 1.5s ease-in forwards;
+}
+
+@keyframes fadeInGastronomia {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ESTILOS CONSEJOS  */
+.grid-consejos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.tarjeta-consejo {
+    background: #eef2f3;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 5px solid #1abc9c;
+}
+
+.tarjeta-consejo .icono {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* Animacio para Consejos */
+.consejos-page .tarjeta-consejo {
+    animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ESTILOS GALERIA */
+.muro-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.foto {
+    overflow: hidden;
+    border-radius: 8px;
+    height: 250px;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: grayscale(30%);
+}
+
+.foto img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* Animacion de entrada para las fotos */
+.galeria-page .foto {
+    animation: entrance 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes entrance {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.intro-inicio {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.intro-inicio h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.datos-curiosos {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background: #1abc9c;
+    color: white;
+    text-align: center;
+}
+
+.dato .numero {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+}
